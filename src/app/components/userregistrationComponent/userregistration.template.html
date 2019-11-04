@@ -1,0 +1,92 @@
+<div fxLayout="row " fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" class="Margin-tb" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.gt-md="40" fxFlex.sm="70" fxFlex.md="60" fxFlex.xs="100">
+    <form #form="ngForm" style="Width=100%">
+      <mat-card>
+        <mat-card-title>Employee Information</mat-card-title>
+
+        <mat-card-content>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.25em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+                  <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
+                    <mat-icon>Person</mat-icon>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                      <input matInput [(ngModel)]="dm.leaverequest.firstname " name="firstname" placeholder="First Name" required [disabled]="true">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.25em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+                  <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
+                    <mat-icon>Person</mat-icon>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                      <input matInput [(ngModel)]="dm.leaverequest.lastname " name="lastname" placeholder="Last Name" required [disabled]="true">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.2em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+                  <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
+                    <mat-icon>Email</mat-icon>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                      <input matInput [(ngModel)]="dm.leaverequest.username " name="username" placeholder="Email ID" required [disabled]="true">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.2em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+                  <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
+                    <mat-icon>Person</mat-icon>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                      <input matInput [(ngModel)]="dm.leaverequest.employeeID" name="employee ID" placeholder="Employee ID" required>
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.25em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                    <mat-icon>Group</mat-icon>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                      <mat-select [(value)]="department" placeholder="Department" [(ngModel)]="dm.employee.staff.department " required (selectionChange)="showManager() " {{department}} name="department" *ngFor="let department of departments">
+                        <ng-template ngFor let-option [ngForOf]="departments" let-i="index">
+                          <mat-option [value]="option">{{option}}</mat-option>
+                        </ng-template>
+                      </mat-select>
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.25em" fxLayoutAlign="center center" [fxShow]="remove" [fxHide]="remove" !isManager && managers.length> 0 &gt;<div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
+                    <mat-icon>account_box</mat-icon>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                      <mat-select placeholder="Manager" [(ngModel)]="dm.employee.staff.ManagerName" required name="managerName " [required]="userObj &amp;&amp; userObj.groupList.indexOf(&apos;Employee&apos;) &gt; -1 ? &apos;required&apos;: null" *ngFor="let manager of managers" optiondata="{{manager}}">
+                        <ng-template ngFor let-option [ngForOf]="managers" let-i="index">
+                          <mat-option [value]="option">{{option}}</mat-option>
+                        </ng-template>
+                      </mat-select>
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" [fxShow]="remove" [fxHide]="remove" fxshow="remove" fxhide="remove"><button mat-button color="primary" (click)="put(&apos;employee&apos;, dm.employee)" [disabled]="form.valid">Save</button></div>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>

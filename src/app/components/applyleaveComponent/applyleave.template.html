@@ -1,0 +1,39 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" class="Margin-tb" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.gt-md="40" fxFlex.sm="70" fxFlex.md="60" fxFlex.xs="100">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <mat-card class="Card">
+        <mat-card-title>Card Title</mat-card-title>
+
+        <mat-card-content>
+          <form #form="ngForm">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                <mat-select placeholder="Leave Type" [(ngModel)]="dm.leaverequest.leaveType " required name="leaveType">
+                  <ng-template ngFor let-option [ngForOf]="leaves" let-i="index">
+                    <mat-option [value]="option">{{option}}</mat-option>
+                  </ng-template>
+                </mat-select>
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;legacy&apos;">
+                <input matInput placeholder="From date" [matDatepicker]="picker1" [(ngModel)]="dm.leaverequest.fromDate " name="fromDate" [min]="minDate" required [disabled]="false" readonly="readonly">
+                <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 [disabled]="false" touchUi="touchUi"></mat-datepicker>
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;legacy&apos;">
+                <input matInput placeholder="To date" [matDatepicker]="picker2" [(ngModel)]="dm.leaverequest.toDate" name="toDate" [min]="minDate" required [disabled]="false">
+                <mat-datepicker-toggle matSuffix [for]="picker2" disabled="false"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 disabled="!dm.leaverequest.fromDate?&apos;disabled&apos;:null" [disabled]="false" touchUi="touchUi"></mat-datepicker>
+
+              </mat-form-field>
+              <mat-form-field>
+                <textarea matInput [(ngModel)]="dm.leaverequest.leaveReason" type="text" minlength="5" name="reason" placeholder="Leave reason" required></textarea>
+              </mat-form-field><button mat-raised-button color="primary" (click)="applyLeave(form)" [disabled]="!form.valid">apply</button><button mat-raised-button routerLink="/home/userdetail" color="primary">Cancel</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

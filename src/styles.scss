@@ -1,0 +1,49 @@
+/*Importing default angular material css theme. */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+.login-card .mat-card-image:first-child {
+    margin-top:0 !important
+}
+.primary-red-btn {
+   background-color: #ee1c22;
+   color: white;
+}
+bh-userdetails {
+    height: 100%;
+}
+.margin-tb {
+    margin: 15px 0 15px 0 !important;
+}
+.acceptIcon {
+    color: green;
+    box-shadow: none !important;
+}
+.rejectIcon {
+    color: red;
+    box-shadow: none !important;
+}
+.infoIcon {
+    color: orange;
+}
+.applyleavebtn {
+    position: fixed;
+    bottom: 75px;
+    right: 10%;
+}
+.card {
+    width: 85% !important;
+}
+.mat-tab-group  {
+        height: 100% !important;
+}
+.header4 { 
+    display: block;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.fullinfix .mat-form-field-infix{
+    width:100% !important;
+}

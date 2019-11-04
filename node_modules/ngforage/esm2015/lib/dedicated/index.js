@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { DedicatedInstanceFactory } from './dedicated-instance-factory.service';
+export { NgForageCacheDedicated } from './ng-forage-cache-dedicated.class';
+export { NgForageDedicated } from './ng-forage-dedicated.class';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uZ2ZvcmFnZS8iLCJzb3VyY2VzIjpbImxpYi9kZWRpY2F0ZWQvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLHlDQUFjLHNDQUFzQyxDQUFDO0FBQ3JELHVDQUFjLG1DQUFtQyxDQUFDO0FBQ2xELGtDQUFjLDZCQUE2QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9kZWRpY2F0ZWQtaW5zdGFuY2UtZmFjdG9yeS5zZXJ2aWNlJztcbmV4cG9ydCAqIGZyb20gJy4vbmctZm9yYWdlLWNhY2hlLWRlZGljYXRlZC5jbGFzcyc7XG5leHBvcnQgKiBmcm9tICcuL25nLWZvcmFnZS1kZWRpY2F0ZWQuY2xhc3MnO1xuIl19

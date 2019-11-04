@@ -1,0 +1,9 @@
+{
+    "dataSource": {
+        "user": "neutrinos-training-rt",
+        "Staff": "neutrinos-training-rt",
+        "Leaves": "neutrinos-training-rt",
+        "LeaveRequest": "neutrinos-training-rt",
+        "Employee": "neutrinos-training-rt"
+    }
+}

@@ -1,0 +1,53 @@
+<div fxLayout="column " class="margin-tb" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false" fxFill>
+  <mat-card fxFlexAlign="center" *ngIf="leaveRequests.length == 0" class="card">
+    <mat-card-title>No active leaves for approval</mat-card-title>
+
+    <mat-card-content></mat-card-content>
+  </mat-card>
+  <div fxLayout="column wrap" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false">
+    <mat-card *ngFor="let leaves of leaveRequests" class="card">
+      <mat-card-content>
+        <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="1.5em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="0.8em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+            <mat-form-field>
+              <textarea matInput placeholder="Employee Name" value="{{leaves.fullName}}" required [disabled]="true"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="From Date" value="{{leaves.fromDate|date:&apos;DD/MM/YYYY&apos;}}" required [disabled]="true"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="To Date" value="{{leaves.fromDate|date:&apos;DD/MM/YYYY&apos;}}" required [disabled]="true"></textarea>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <mat-form-field>
+              <textarea matInput placeholder="leaveType" value="{{leaves.leaveType == &apos;annualLeaves&apos;? &apos;Annual&apos;: &apos;Sick&apos;}} Leave" required [disabled]="true"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="Duration" value="{{leaves.duration}} Days " required [disabled]="true"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="Leave Reason" value="{{leaves.leaveReason}}" required [disabled]="true"></textarea>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxFlex="28" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+            <p Text="Status" class="h4">
+            </p>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false">
+              <div fxLayout="column wrap" fxFlex="28" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100"><button mat-mini-fab class="acceptIcon" title="Accept" color="default" (click)="accept(leaves) " [disabled]="leaves.leaveStatus==&apos;accept&apos;">
+                  <mat-icon>
+                    <mat-icon>check_circle</mat-icon>
+                  </mat-icon>
+                </button></div>
+              <div fxLayout="column wrap" fxFlex="28" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100"><button mat-mini-fab class="rejectIcon" color="default" (click)="reject(leaves) " [disabled]="leaves.leaveStatus==&apos;reject&apos;">
+                  <mat-icon>
+                    <mat-icon>cancel</mat-icon>
+                  </mat-icon>
+                </button></div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

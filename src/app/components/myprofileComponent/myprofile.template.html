@@ -1,0 +1,51 @@
+<div fxLayout="column wrap" class="Margin-tb" fxFlex="100" fxLayoutGap="1 em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+  <mat-card class="card">
+    <mat-card-title>Profile Information</mat-card-title>
+
+    <mat-card-content></mat-card-content>
+  </mat-card>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" class="Margin-tb  " fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" class="Margin-tb" fxFlex="45" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="First Name" value="{{uService.user.staff.firstName}}" required [disabled]="true">
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" class="Margin-tb" fxFlex="45" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Last Name" value="{{uService.user.staff.lastName}}" required [disabled]="true">
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxFlex="45" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Email ID" value="{{uService.user.staff.userName}}" required [disabled]="true">
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxFlex="45" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Employee ID" value="{{uService.user.staff.employeeID}}" required [disabled]="true">
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxFlex="45" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Department" value="{{uService.user.staff.department}}" required [disabled]="true">
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxFlex="45" fxLayoutAlign="start stretch" [fxShow]=" !uService.isManager()" [fxHide]="false" fxFlex.xs="100">
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Manager" value="{{uService.user.staff.managerName}}" required [disabled]="true">
+
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>

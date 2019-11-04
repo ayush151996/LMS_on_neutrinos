@@ -1,0 +1,5 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZHJpdmVyLXR5cGUudHlwZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25nZm9yYWdlLyIsInNvdXJjZXMiOlsibGliL21pc2MvZHJpdmVyLXR5cGUudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtEcml2ZXJ9IGZyb20gJy4vZHJpdmVyLmVudW0nO1xuXG5leHBvcnQgdHlwZSBEcml2ZXJUeXBlID0gRHJpdmVyIHwgc3RyaW5nO1xuIl19

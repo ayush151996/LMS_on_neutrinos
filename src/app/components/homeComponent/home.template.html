@@ -1,0 +1,18 @@
+<div fxLayout="column " fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false" fxFill>
+  <mat-toolbar space-between>
+    <div fxLayout="column wrap" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/logo.png" style="width:30%;cursor:pointer;" routerLink="/home/userdetail"></div>
+    <div fxLayout="column wrap" style="cursor:pointer;" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
+      <mat-icon style="cursor:pointer;" (click)="logoutUser()" title="Logout">power_settings_new</mat-icon>
+    </div>
+  </mat-toolbar>
+  <div fxLayout="column " style="overflow:auto;" fxFlex="calc(100%-128px)" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false">
+    <router-outlet></router-outlet>
+  </div>
+  <mat-toolbar>
+    <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <p style="font-size:12px;">
+      </p>
+    </div>
+  </mat-toolbar>
+  <div fxLayout="column " fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false" fxFill></div>
+</div>
