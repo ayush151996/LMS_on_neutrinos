@@ -46,7 +46,7 @@
         "localforage": "1.7.3",
         "neutrinos-module": "0.0.48",
         "ng2-charts": "1.6.0",
-        "node-sass": "4.12.0",
+        "node-sass": "7.0.0",
         "rxjs": "6.5.2",
         "signature_pad": "2.3.2",
         "zone.js": "0.10.1"
